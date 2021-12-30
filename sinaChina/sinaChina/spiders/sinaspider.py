@@ -7,7 +7,7 @@ import copy
 
 
 class SinaspiderSpider(scrapy.Spider):
-    name = 'sinaspider2.0'
+    name = 'sinaspider3.0'
     allowed_domains = ['sina.com.cn']
     start_urls = ['http://news.sina.com.cn/guide/']
 

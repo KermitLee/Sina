@@ -1,3 +1,3 @@
 from scrapy import cmdline
 
-cmdline.execute('scrapy crawl sinaspider2.0'.split())
+cmdline.execute('scrapy crawl sinaspider3.0'.split())
