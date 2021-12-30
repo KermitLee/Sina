@@ -7,7 +7,7 @@
 
 import os
 
-Base_dir = os.path.join(os.path.dirname(os.getcwd()), 'data')
+Base_dir = os.path.dirname(os.getcwd()) + '\\sinaChina\\data'
 
 
 class SinachinaPipeline(object):
@@ -19,11 +19,20 @@ class SinachinaPipeline(object):
             filedirPath += '\\'
             filedirPath += item['level2']
 
-            if item['level3'] != '' and item['title'] != '':
-                filedirPath += '\\'
-                filedirPath += item['level3']
+            if item['title'] != '':
+                # filedirPath += '\\'
+                # filedirPath += item['level3']
 
                 filename = filedirPath + '\\' + item['title'] + '.txt'
                 with open(filename, 'wb') as f:
                     f.write(item['content'].encode('utf-8'))
                 return item
+
+            # if item['level3'] != '' and item['title'] != '':
+            #     filedirPath += '\\'
+            #     filedirPath += item['level3']
+            #
+            #     filename = filedirPath + '\\' + item['title'] + '.txt'
+            #     with open(filename, 'wb') as f:
+            #         f.write(item['content'].encode('utf-8'))
+            #     return item

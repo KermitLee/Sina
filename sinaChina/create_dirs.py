@@ -31,17 +31,17 @@ for parenturl in parenturls:
         print("----", line.xpath('./a/text()'))
         level2_path = level1_path + '\\' + line.xpath('./a/text()')[0]
         os.mkdir(level2_path)
-        # 三级目录
-        try:
-            response = requests.get(line.xpath('./a/@href')[0])
-            html = etree.HTML(response.content.decode('utf-8', 'ignore'))
-            # 三级类
-            # 三级目录
-            datas = html.xpath("//div[@class='wrap clearfix']/div[@class='links']/a")
-            for data in datas:
-                print('--------', data.xpath("./text()"))
-                level3_path = level2_path + '\\' + data.xpath("./text()")[0]
-                os.mkdir(level3_path)
-        except Exception:
-            pass
+        # # 三级目录
+        # try:
+        #     response = requests.get(line.xpath('./a/@href')[0])
+        #     html = etree.HTML(response.content.decode('utf-8', 'ignore'))
+        #     # 三级类
+        #     # 三级目录
+        #     datas = html.xpath("//div[@class='wrap clearfix']/div[@class='links']/a")
+        #     for data in datas:
+        #         print('--------', data.xpath("./text()"))
+        #         level3_path = level2_path + '\\' + data.xpath("./text()")[0]
+        #         os.mkdir(level3_path)
+        # except Exception:
+        #     pass
     print('')
